@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 用递归算法实现数组长度为5且元素的随机数在2-23间不重复的值
+        var arr = [];
+       function rand(arr){
+           if(arr.length === 5) return arr;
+           var num = Math.floor((Math.random()*31))+2;
+           if(arr.indexOf(num) === -1){
+               arr[arr.length] = num;
+           }
+           return rand(arr);
+       }
+       console.log(rand(arr));
+    </script>
+</body>
+</html>
